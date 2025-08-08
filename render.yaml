@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ciclo-devops-flask
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 5000
