@@ -43,12 +43,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Render deploy (Deploy Hook)  # Opción A
-        if: secrets.RENDER_DEPLOY_HOOK_URL != ''
+        if: secrets.RENDER_DEPLOY_HOOK_URL != '' }}
         run: |
           curl -fsSL -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
 
       - name: Trigger Render deploy (API v1)       # Opción B
-        if: secrets.RENDER_DEPLOY_HOOK_URL == '' && secrets.RENDER_API_KEY != '' && secrets.RENDER_SERVICE_ID != ''
+        if: secrets.RENDER_DEPLOY_HOOK_URL == '' && secrets.RENDER_API_KEY != '' && secrets.RENDER_SERVICE_ID != '' }}
         env:
           RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
           RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
